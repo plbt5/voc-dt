@@ -1,5 +1,5 @@
 # voc-dt
-An open SKOS vocabulary on types of devices
+An open SKOS vocabulary on types of devices as a best-effort-taxonomy. A device might be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)
 
 # The current vocabulary
 
@@ -12,7 +12,6 @@ The following acronyms are used for relationships between terms:
 ## Device types
 Paul Brandt (paul@brandt.name), Cyber-investigation Analysis Standard Expression (CASE)
 
-A best-effort-specified device taxonomy, where a device might be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)
 
     Adaptor
         DEF : Device that physical converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)
