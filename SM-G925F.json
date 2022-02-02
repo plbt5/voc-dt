@@ -10,6 +10,9 @@
         {
             "@id": "kb:samsung-device-uuid",
             "@type": "uco-observable:ObservableObject",
+            "rdfs:seeAlso": {
+                "@id": "https://caseontology.org/examples/crossover/"
+            },
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
