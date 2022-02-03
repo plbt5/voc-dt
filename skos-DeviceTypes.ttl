@@ -4,6 +4,7 @@
 # @prefix omr-rs: <http://metadataregistry.org/uri/RegStatus/> .
 @prefix ns1: <http://dbpedia.org/ontology/> .
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/deviceType/> .
 
