@@ -3,6 +3,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 # @prefix omr-rs: <http://metadataregistry.org/uri/RegStatus/> .
 @prefix ns1: <http://dbpedia.org/ontology/> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/deviceType/> .
 
@@ -32,19 +33,11 @@ dt:Device_Types_Scheme
   skos:hasTopConcept dt:Server, dt:Smart_Device, dt:Embedded_Device, dt:Media, dt:Write_Blocker, dt:Adaptor, dt:Protocol_Converter, dt:Computer, dt:Laptop, dt:Tablet, dt:Digital_Camera, dt:Mobile_Phone .
 
 #
-# Fully specify the DeviceTypeConcept stub as a hinge between UCO concepts and this device type taxonomy
-#
-
-dt:DeviceTypeConcept            
-  a owl:Class;                      # This owl:Class assures it can be applied in the uco ontology
-  rdfs:subClassOf skos:Concept .    # This skos:Concept represents the category of device types that are supported by this taxonomy
-
-#
 # SKOS CONCEPT definitions: GENERIC devices
 #
 
 dt:Server
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Server"@en-US ;
   skos:definition "Server Rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
@@ -54,7 +47,7 @@ dt:Server
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Smart_Device
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Smart_Device"@en-US ;
   skos:definition "Microprocessor IoT devices expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
@@ -64,7 +57,7 @@ dt:Smart_Device
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Embedded_Device
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Embedded_Device"@en-US ;
   skos:definition "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
@@ -74,7 +67,7 @@ dt:Embedded_Device
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Storage_Medium
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Storage Medium"@en-US ;
   skos:definition "Storage Medium refers to digital storage devices that apply electromagnetic or optical surfaces, or depend solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
@@ -85,7 +78,7 @@ dt:Storage_Medium
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Write_Blocker
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Write_Blocker"@en-US ;
   skos:definition "Tableau, Cellibrite, Talon, et"@en-US ;
@@ -94,7 +87,7 @@ dt:Write_Blocker
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Adaptor
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Adaptor"@en-US ;
   skos:definition "Device that physical converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
@@ -104,7 +97,7 @@ dt:Adaptor
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Protocol_Converter
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Protocol_Converter"@en-US ;
   skos:definition "Device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
@@ -114,7 +107,7 @@ dt:Protocol_Converter
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Computer
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Computer"@en-US ;
   skos:definition "Floor/Desktop based computer, including standard workstations"@en-US ;
@@ -124,7 +117,7 @@ dt:Computer
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Laptop
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Laptop"@en-US ;
   skos:definition "Devices categorised by their manufacturer as a Laptop"@en-US, "A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode."@en-US ;
@@ -135,7 +128,7 @@ dt:Laptop
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Tablet
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Tablet"@en-US ;
   skos:definition "Devices categorised by their manufacturer as a Tablet"@en-US, "A mobile computer that is primarily operated by touching the screen"@en-US ;
@@ -145,7 +138,7 @@ dt:Tablet
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Digital_Camera
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Digital_Camera"@en-US ;
   skos:definition "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
@@ -155,7 +148,7 @@ dt:Digital_Camera
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Mobile_Phone
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Mobile_Phone"@en-US ;
   skos:definition "A portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
@@ -165,7 +158,7 @@ dt:Mobile_Phone
   skos:topConceptOf dt:Device_Types_Scheme .
 
 dt:Cell_Phone
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Cell_Phone"@en-US ;
   skos:definition "A cellular phone, cell phone, cellphone, handphone, or hand phone, sometimes shortened to simply mobile, cell or just phone, is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area. Examples include Nokia 3310, Siemens A55"@en-US ;
@@ -176,7 +169,7 @@ dt:Cell_Phone
   skos:broader dt:Mobile_Phone .
 
 dt:Smart_Phone
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Smart_Phone"@en-US ;
   skos:definition "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry."@en-US ;
@@ -188,7 +181,7 @@ dt:Smart_Phone
   skos:broader dt:Mobile_Phone, dt:Smart_Device .
 
 dt:Android_Phone
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Android_Phone"@en-US ;
   skos:definition "A smart phone that applies the Android mobile operating system."@en-US ;
@@ -202,7 +195,7 @@ dt:Android_Phone
 #
 
 dt:Fairphone-4
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Fairphone-4"@en-US ;
   skos:definition "Fairphone model 4."@en-US ;
@@ -212,7 +205,7 @@ dt:Fairphone-4
 
 
 dt:SM-G925F
-  a dt:DeviceTypeConcept ;
+  a observable:DeviceTypeConcept ;
   skos:inScheme dt:Device_Types_Scheme ;
   skos:prefLabel "Samsung SM-G925F"@en-US ;
   skos:definition "Samsung SM-G925F Galaxy S6 Edge."@en-US;
