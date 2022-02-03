@@ -37,8 +37,11 @@ def graph() -> rdflib.Graph:
     graph.bind("skos", NS_SKOS)
     graph.bind("observable", NS_UCO_OBSERVABLE)
 
-    logging.debug("Loading sample knowledge-base file.")
+    logging.debug("Loading sample knowledge-base file 1.")
     graph.parse(str(top_srcdir / "SM-G925F.json"), format="json-ld")
+
+    logging.debug("Loading sample knowledge-base file 2.")
+    graph.parse(str(top_srcdir / "counterfeit-iphone4.json"), format="json-ld")
 
     logging.debug("Loading device types ontology.")
     graph.parse(str(top_srcdir / "skos-DeviceTypes.ttl"), format="turtle")
@@ -60,7 +63,7 @@ def graph() -> rdflib.Graph:
 
 def test_exact_match(graph: rdflib.Graph) -> None:
     """
-    Find subject device by exact taxon match.
+    Find subject Samsung device by exact taxon match.
     """
 
     expected = {str(NS_KB["samsung-device-uuid"])}
@@ -87,7 +90,7 @@ WHERE {
 
 def test_android_phone_direct_match(graph: rdflib.Graph) -> None:
     """
-    Confirm the device can be found by being, "most directly," an Android Phone.  "Most directly" means skos:broader is used in the query.  This query is also written to accept if the instance data merely tagged the phone as an Android Phone instead of a more specific model.
+    Confirm the Samsung device can be found by merit of being, "most directly," an Android Phone.  "Most directly" means skos:broader is used in the query.  This query is also written to accept if the instance data merely tagged the phone as an Android Phone instead of a more specific model.
     """
 
     expected = {str(NS_KB["samsung-device-uuid"])}
@@ -117,7 +120,7 @@ WHERE {
 
 def test_android_phone_transitive_match(graph: rdflib.Graph) -> None:
     """
-    Confirm the device can be found by being an Android Phone.  This test uses the transitive property skos:broaderTransitive to find whether the device is an Android Phone, or has Android Phone as a broader class 0 or mor skos:broader's away in the hierarchy.
+    Confirm the Samsung device can be found by merit of being an Android Phone.  This test uses the transitive property skos:broaderTransitive to find whether the device is an Android Phone, or has Android Phone as a broader class 0 or mor skos:broader's away in the hierarchy.
     """
 
     expected = {str(NS_KB["samsung-device-uuid"])}
@@ -147,7 +150,7 @@ WHERE {
 
 def test_mobile_phone_transitive_match(graph: rdflib.Graph) -> None:
     """
-    Confirm the device can be found by being a Mobile Phone.
+    Confirm the Samsung device can be found by merit of being a Mobile Phone.  However, at this breadth of search, at least one other phone is found.
     """
 
     expected = {str(NS_KB["samsung-device-uuid"])}
@@ -172,4 +175,4 @@ WHERE {
         (n_device,) = result
         computed.add(str(n_device))
 
-    assert expected == computed
+    assert expected < computed

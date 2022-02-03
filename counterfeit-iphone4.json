@@ -1,0 +1,39 @@
+{
+    "@context": {
+        "@language": "en",
+        "dkb": "http://example.org/device-kb/",
+        "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/deviceType/"
+    },
+    "@graph": [
+        {
+            "@id": "dkb:device-type-concept-f573379d-2cf3-4414-b7ba-c62209a70bfa",
+            "@type": "uco-observable:DeviceTypeConcept",
+            "rdfs:comment": "Device components are also referenced in the paper's description, including a Toshiba TC58FYM7T8C NOR flash memory chip.",
+            "rdfs:seeAlso": {
+                "@id": "https://doi.org/10.1007/978-3-642-33962-2_9"
+            },
+            "skos:broader": {
+                "@id": "uco-dt:Smart_Phone"
+            },
+            "skos:definition": "A class of counterfeit iPhone 4, with characteristics described in Section 4 of 'Fang J. et al. (2012) Forensic Analysis of Pirated Chinese Shanzhai Mobile Phones. In: Peterson G., Shenoi S. (eds) Advances in Digital Forensics VIII. DigitalForensics 2012. IFIP Advances in Information and Communication Technology, vol 383. Springer, Berlin, Heidelberg.'"
+        },
+        {
+            "@id": "kb:device-e9458663-1f36-49b7-8596-d91c02997282",
+            "@type": "uco-observable:Device",
+            "uco-core:description": "A device confirmed through manual review to be a member of a known class of counterfeit phone.",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:DeviceFacet",
+                    "uco-observable:deviceType": {
+                        "@id": "dkb:device-type-concept-f573379d-2cf3-4414-b7ba-c62209a70bfa"
+                    }
+                }
+            ]
+        }
+    ]
+}
