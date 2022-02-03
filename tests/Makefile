@@ -23,6 +23,10 @@ check: \
 
 # NOTE - This does not use `case_validate`, in order to avoid any circular submodule dependencies between UCO and the CASE Python Utilities.
 check-pyshacl: \
+  check-pyshacl-SM-G925F \
+  check-pyshacl-counterfeit-iphone4
+
+check-pyshacl-SM-G925F: \
   $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl
 	source $(top_srcdir)/dependencies/UCO/tests/venv/bin/activate \
 	  && pyshacl \
@@ -33,6 +37,18 @@ check-pyshacl: \
 	    --shacl $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    $(top_srcdir)/SM-G925F.json
+
+check-pyshacl-counterfeit-iphone4: \
+  $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl
+	source $(top_srcdir)/dependencies/UCO/tests/venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format json-ld \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(top_srcdir)/skos-DeviceTypes.ttl \
+	    --shacl $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl \
+	    --shacl-file-format turtle \
+	    $(top_srcdir)/counterfeit-iphone4.json
 
 check-pytest: \
   $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl
