@@ -12,7 +12,6 @@
 
 <https://taxonomy.unifiedcyberontology.org/uco/deviceType> 
   a owl:Ontology ;
-  owl:versionIRI <https://taxonomy.unifiedcyberontology.org/uco/deviceType/0.1.0> ;
   owl:versionInfo "0.1.0"@en ;
   rdfs:label "uco-dt"@en ;
   dct:license "Apache 2.0" ;
