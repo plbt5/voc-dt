@@ -1,10 +1,9 @@
 {
     "@context": {
-        "@vocab": "http://example.org/ontology/local#",
-        "drafting": "http://example.org/ontology/drafting#",
+        "kb": "http://example.org/kb/",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/deviceType#"
+        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/deviceType/"
     },
     "@graph": [
         {
@@ -16,7 +15,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:deviceType": "dt:SM-G925F",
+                    "uco-observable:deviceType": {
+                        "@id": "uco-dt:SM-G925F"
+                    },
                     "uco-observable:manufacturer": "Samsung",
                     "uco-observable:model": "SM-G925F",
                     "uco-observable:serialNumber": "RF8H31GS5SF"
