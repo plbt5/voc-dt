@@ -44,6 +44,7 @@ clean:
 	  clean
 	@rm -f \
 	  .git_submodule_init.done.log
-	@$(MAKE) \
-	  --directory dependencies/UCO \
-	  clean
+	@test ! -r dependencies/UCO/README.md \
+	  || $(MAKE) \
+	    --directory dependencies/UCO \
+	    clean
