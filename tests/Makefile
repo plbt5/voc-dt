@@ -54,7 +54,8 @@ check-pytest: \
   $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl
 	source $(top_srcdir)/dependencies/UCO/tests/venv/bin/activate \
 	  && pytest \
-	    --log-level=DEBUG
+	    --log-level=DEBUG \
+	    --override-ini log_cli=true
 
 # Nothing to do yet.
 clean:

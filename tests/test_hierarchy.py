@@ -85,6 +85,8 @@ WHERE {
         (n_device,) = result
         computed.add(str(n_device))
 
+    logging.debug("Query results: %r.", sorted(computed))
+
     assert expected == computed
 
 
@@ -114,6 +116,8 @@ WHERE {
     for result in graph.query(query):
         (n_device,) = result
         computed.add(str(n_device))
+
+    logging.debug("Query results: %r.", sorted(computed))
 
     assert expected == computed
 
@@ -145,6 +149,8 @@ WHERE {
         (n_device,) = result
         computed.add(str(n_device))
 
+    logging.debug("Query results: %r.", sorted(computed))
+
     assert expected == computed
 
 
@@ -174,5 +180,7 @@ WHERE {
     for result in graph.query(query):
         (n_device,) = result
         computed.add(str(n_device))
+
+    logging.debug("Query results: %r.", sorted(computed))
 
     assert expected < computed
