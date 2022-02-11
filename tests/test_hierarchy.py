@@ -25,7 +25,7 @@ NS_UCO_DT = rdflib.Namespace("https://taxonomy.unifiedcyberontology.org/uco/devi
 NS_UCO_OBSERVABLE = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/observable#")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def graph() -> rdflib.Graph:
     top_srcdir = pathlib.Path(__file__).parent / ".."
     graph = rdflib.Graph()
@@ -85,6 +85,8 @@ WHERE {
         (n_device,) = result
         computed.add(str(n_device))
 
+    logging.debug("Query results: %r.", sorted(computed))
+
     assert expected == computed
 
 
@@ -114,6 +116,8 @@ WHERE {
     for result in graph.query(query):
         (n_device,) = result
         computed.add(str(n_device))
+
+    logging.debug("Query results: %r.", sorted(computed))
 
     assert expected == computed
 
@@ -145,6 +149,8 @@ WHERE {
         (n_device,) = result
         computed.add(str(n_device))
 
+    logging.debug("Query results: %r.", sorted(computed))
+
     assert expected == computed
 
 
@@ -174,5 +180,7 @@ WHERE {
     for result in graph.query(query):
         (n_device,) = result
         computed.add(str(n_device))
+
+    logging.debug("Query results: %r.", sorted(computed))
 
     assert expected < computed
