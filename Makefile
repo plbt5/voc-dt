@@ -15,7 +15,10 @@ SHELL := /bin/bash
 
 PYTHON3 ?= python3
 
-all:
+all: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory documentation
 
 .git_submodule_init.done.log: \
   .gitmodules
@@ -28,11 +31,16 @@ all:
 	touch $@
 
 .venv.done.log: \
-  .git_submodule_init.done.log
+  .git_submodule_init.done.log \
+  requirements.txt
 	$(MAKE) \
 	  PYTHON3=$(PYTHON3) \
 	  --directory dependencies/UCO/tests \
 	  .venv.done.log
+	# Augment UCO virtual environment with table building package.
+	source dependencies/UCO/tests/venv/bin/activate \
+	  && pip install \
+	    --requirement requirements.txt
 	touch $@
 
 check: \
