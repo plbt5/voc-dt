@@ -27,11 +27,18 @@ all:
 	  .lib.done.log
 	touch $@
 
-check: \
+.venv.done.log: \
   .git_submodule_init.done.log
-	# First, build monolithic render of UCO at tracked commit.
 	$(MAKE) \
 	  PYTHON3=$(PYTHON3) \
+	  --directory dependencies/UCO/tests \
+	  .venv.done.log
+	touch $@
+
+check: \
+  .venv.done.log
+	# First, build monolithic render of UCO at tracked commit.
+	$(MAKE) \
 	  --directory dependencies/UCO/tests \
 	  uco_monolithic.ttl
 	$(MAKE) \
@@ -43,7 +50,7 @@ clean:
 	  --directory tests \
 	  clean
 	@rm -f \
-	  .git_submodule_init.done.log
+	  .*.done.log
 	@test ! -r dependencies/UCO/README.md \
 	  || $(MAKE) \
 	    --directory dependencies/UCO \
