@@ -25,7 +25,7 @@ NS_UCO_DT = rdflib.Namespace("https://taxonomy.unifiedcyberontology.org/uco/devi
 NS_UCO_OBSERVABLE = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/observable#")
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def graph() -> rdflib.Graph:
     top_srcdir = pathlib.Path(__file__).parent / ".."
     graph = rdflib.Graph()
