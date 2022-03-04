@@ -7,7 +7,7 @@
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/deviceType/"
+        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/device-types/"
     },
     "@graph": [
         {

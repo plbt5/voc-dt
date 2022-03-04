@@ -33,7 +33,7 @@ check-pyshacl-SM-G925F: \
 	    --data-file-format json-ld \
 	    --inference none \
 	    --ont-file-format turtle \
-	    --ont-graph $(top_srcdir)/skos-DeviceTypes.ttl \
+	    --ont-graph $(top_srcdir)/taxonomy/device-types/device-types.ttl \
 	    --shacl $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    $(top_srcdir)/SM-G925F.json
@@ -45,7 +45,7 @@ check-pyshacl-counterfeit-iphone4: \
 	    --data-file-format json-ld \
 	    --inference none \
 	    --ont-file-format turtle \
-	    --ont-graph $(top_srcdir)/skos-DeviceTypes.ttl \
+	    --ont-graph $(top_srcdir)/taxonomy/device-types/device-types.ttl \
 	    --shacl $(top_srcdir)/dependencies/UCO/tests/uco_monolithic.ttl \
 	    --shacl-file-format turtle \
 	    $(top_srcdir)/counterfeit-iphone4.json

@@ -20,11 +20,11 @@ all: \
 
 README.md: \
   $(top_srcdir)/dependencies/UCO/tests/.venv.done.log \
-  $(top_srcdir)/skos-DeviceTypes.ttl \
+  $(top_srcdir)/taxonomy/device-types/device-types.ttl \
   README_md.py
 	rm -f _$@
 	source $(top_srcdir)/dependencies/UCO/tests/venv/bin/activate \
 	  && python3 README_md.py \
 	    _$@ \
-	    $(top_srcdir)/skos-DeviceTypes.ttl
+  	    $(top_srcdir)/taxonomy/device-types/device-types.ttl 
 	mv _$@ $@

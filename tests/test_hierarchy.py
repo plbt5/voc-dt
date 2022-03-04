@@ -21,7 +21,7 @@ import rdflib
 NS_KB = rdflib.Namespace("http://example.org/kb/")
 NS_SKOS = rdflib.SKOS
 NS_UCO_CORE = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/core#")
-NS_UCO_DT = rdflib.Namespace("https://taxonomy.unifiedcyberontology.org/uco/deviceType/")
+NS_UCO_DT = rdflib.Namespace("https://taxonomy.unifiedcyberontology.org/uco/device-types/")
 NS_UCO_OBSERVABLE = rdflib.Namespace("https://unifiedcyberontology.org/ontology/uco/observable#")
 
 
@@ -44,7 +44,7 @@ def graph() -> rdflib.Graph:
     graph.parse(str(top_srcdir / "counterfeit-iphone4.json"), format="json-ld")
 
     logging.debug("Loading device types ontology.")
-    graph.parse(str(top_srcdir / "skos-DeviceTypes.ttl"), format="turtle")
+    graph.parse(str(top_srcdir / "taxonomy" / "device-types" / "device-types.ttl"), format="turtle")
 
     logging.debug("Loading SKOS.")
     graph.parse(str(top_srcdir / "dependencies" / "skos-owl1-dl.rdf"), format="xml")

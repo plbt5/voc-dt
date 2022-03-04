@@ -3,12 +3,12 @@
         "kb": "http://example.org/kb/",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/deviceType/"
+        "uco-dt": "https://taxonomy.unifiedcyberontology.org/uco/device-types/"
     },
     "@graph": [
         {
             "@id": "kb:samsung-device-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Device",
             "rdfs:seeAlso": {
                 "@id": "https://caseontology.org/examples/crossover/"
             },
