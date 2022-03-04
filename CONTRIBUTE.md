@@ -44,13 +44,10 @@ One of Time Berners-Lee's Four Rules[^2] reads "When someone looks up a URI, pro
 In conclusion, any newly added concept adds a node, uniquely identified by URI, with human readable labels.
 
 ### SKOS implementation
-Every node that you add will be implemented as part of a larger skos-taxonomy. In the context of this SKOS-taxonomy:
+Every node that you add will be implemented as part of a larger skos-taxonomy. In the context of this SKOS-taxonomy, a *device* or *category of devices* will be implemented as a [`skos:Concept`][skos:concept], particularly as an [`observable:DeviceTypeConcept`][uco:devicetypeconcept] (refer to the [Style guide](#style-guide)). 
 
-* a *device* will be implemented as a [`skos:Concept`][skos:concept], particularly as an [`observable:DeviceTypeConcept`][uco:devicetypeconcept] (refer to the [Style guide](#style-guide)). 
-* a *category* will be implemented as either [`observable:DeviceTypeConcept`][uco:devicetypeconcept] or [`skos:Collection`][skos:collection]
+The intent of a [`skos:ConceptScheme`][skos:conceptscheme] is to capture a single complete taxonomy, enforcing a hierarchy of terms (a tree). Higher terms denote more abstract categories that address only a single or few shared characteristics, whereas lower terms denote more specific categories that share a lot of characteristics. The most specific categories, i.e., the *leafs*, of a concept scheme can almost describe individuals.
 
-The intent of a [`skos:ConceptScheme`][skos:conceptscheme] is to capture a single complete taxonomy, enforcing a hierarchy of terms (a tree). Higher terms denote more abstract categories that address only a single or few shared characteristics, whereas lower terms denote more specific categories that share a lot of characteristics. The most specific categories, i.e., the *leafs*, of a concept scheme can almost describe individuals. <br>
-The intent of a [`skos:Collection`][skos:collection] is to group closely-related concepts that appear in the taxonomy, without enforcing a hierarchy between them. "Collections are useful where a group of concepts shares something in common, and it is convenient to group them under a common label, or where some concepts can be placed in a meaningful order." The "common label" denotes the collection.  
 
 ## Types of contributions we're looking for
 
@@ -137,7 +134,6 @@ Wherever possible, do not take these conversations to private channels, includin
 
 
 [skos:concept]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/#concepts
-[skos:collection]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/#collections
 [skos:conceptscheme]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/#schemes
 [skos:label]: https://www.w3.org/TR/2009/REC-skos-reference-20090818/#labels
 [uuid]: https://www.uuidtools.com/what-is-uuid
