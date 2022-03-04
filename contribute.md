@@ -1,16 +1,25 @@
-# Contribute to the Vocabulary of Devices and their Types (Voc-DT)
 
 
-
+* [Contribute to the Vocabulary of Devices and their Types (Voc-DT)](#contribute-to-the-vocabulary-of-devices-and-their-types-(voc-dt))
 * [Ground rules & expectations](#ground-rules-&-expectations)
 * [Contribute!](#contribute!)
+  * [Background](#background)
+    * [Nodes and labels](#nodes-and-labels)
+    * [SKOS implementation](#skos-implementation)
   * [Types of contributions we're looking for](#types-of-contributions-we're-looking-for)
-  * [How to contribute](#how-to-contribute)
-  * [Pull Request Process](#pull-request-process)
-* [Contributions](#contributions)
+  * [How to contribute: Adding new entries](#how-to-contribute:-adding-new-entries)
+    * [Define your change](#define-your-change)
+    * [Hierarchy of your change](#hierarchy-of-your-change)
+    * [Fork git](#fork-git)
+    * [Implement your change](#implement-your-change)
+    * [Test your change](#test-your-change)
+    * [Pull Request Process](#pull-request-process)
   * [Style guide](#style-guide)
+  * [How to contribute: Modifying existing entries](#how-to-contribute:-modifying-existing-entries)
   * [Community](#community)
+* [References](#references)
 
+# Contribute to the Vocabulary of Devices and their Types (Voc-DT)
 
 # Ground rules & expectations
 
