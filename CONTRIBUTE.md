@@ -1,4 +1,8 @@
+# TODO
 
+* Describe the "governance process": https://unifiedcyberontology.atlassian.net/browse/OC-140?focusedCommentId=10641
+
+Table of Contents
 
 * [Contribute to the Vocabulary of Devices and their Types (Voc-DT)](#contribute-to-the-vocabulary-of-devices-and-their-types-(voc-dt))
 * [Ground rules & expectations](#ground-rules-&-expectations)
