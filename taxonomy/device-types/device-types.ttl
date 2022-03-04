@@ -1,219 +1,230 @@
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-# @prefix omr-rs: <http://metadataregistry.org/uri/RegStatus/> .
+@prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/device-type/> .
 @prefix ns1: <http://dbpedia.org/ontology/> .
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/device-type/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
-#
-# Taxonomy is also declared an ontology for reasons of versioning
-#
-
-<https://taxonomy.unifiedcyberontology.org/uco/device-type> 
-  a owl:Ontology ;
-  owl:versionInfo "0.1.0"@en ;
-  rdfs:label "uco-dt"@en ;
-  dct:license "Apache 2.0" ;
-  dct:created "2022-01-13"^^dct:W3CDTF ;
-  dct:title "UCO Taxonomy on Device Types"@en-US ;
-  dct:description "A best-effort-specified device taxonomy, where a device might, e.g., be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)"@en-US .
-
-#
-# CONCEPT SCHEME definition
-#
-
-dt:Device_Types_Scheme
-  a skos:ConceptScheme ;
-  dc11:title "Device types"@en-US ;
-  dc11:description "A best-effort-specified device taxonomy, where a device might, e.g., be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)"@en-US ;
-  dc11:creator "Brandt, Paul (paul@brandt.name)"@en-US, "Cyber-investigation Analysis Standard Expression (CASE)"@en-US ;
-  dct:created "2022-01-13"^^dct:W3CDTF ;
-  skos:hasTopConcept dt:Server, dt:Smart_Device, dt:Embedded_Device, dt:Media, dt:Write_Blocker, dt:Adaptor, dt:Protocol_Converter, dt:Computer, dt:Laptop, dt:Tablet, dt:Digital_Camera, dt:Mobile_Phone .
-
-#
-# SKOS CONCEPT definitions: GENERIC devices
-#
-
-dt:Server
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Server"@en-US ;
-  skos:definition "Server Rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://netcan.com/wp-content/uploads/2014/06/servers1.jpg> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Smart_Device
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Smart_Device"@en-US ;
-  skos:definition "Microprocessor IoT devices expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.I2j0ufd10uR-8CqUdgdYRQHaE8%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Embedded_Device
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Embedded_Device"@en-US ;
-  skos:definition "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.10ZZrIhhEHm6Cu1GgwmwvQHaEK%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Storage_Medium
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Storage Medium"@en-US ;
-  skos:definition "Storage Medium refers to digital storage devices that apply electromagnetic or optical surfaces, or depend solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:editorialNote "Possibly referenced by new MediaFacet"@en-US ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CsP9VJc0_AP06DruwwMD5AHaFK%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Write_Blocker
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Write_Blocker"@en-US ;
-  skos:definition "Tableau, Cellibrite, Talon, et"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  skos:topConceptOf dt:Device_Types_Scheme .
+<https://taxonomy.unifiedcyberontology.org/uco/device-type>
+	a owl:Ontology ;
+	rdfs:label "uco-dt"@en ;
+	dct:created "2022-01-13"^^dct:W3CDTF ;
+	dct:description "A best-effort-specified device taxonomy, where a device might, e.g., be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)"@en-US ;
+	dct:license "Apache 2.0" ;
+	dct:title "UCO Taxonomy on Device Types"@en-US ;
+	owl:versionInfo "0.1.0"@en ;
+	.
 
 dt:Adaptor
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Adaptor"@en-US ;
-  skos:definition "Device that physical converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1zm70_xP9KhdPwHdfLspLgHaF0%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Protocol_Converter
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Protocol_Converter"@en-US ;
-  skos:definition "Device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.qfAsoA43CLL0loLmBNcoQgAAAA%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Computer
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Computer"@en-US ;
-  skos:definition "Floor/Desktop based computer, including standard workstations"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.CT_vJV9vF2KIH1SV0ZDKXgHaFm%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Laptop
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Laptop"@en-US ;
-  skos:definition "Devices categorised by their manufacturer as a Laptop"@en-US, "A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:altLabel "Notebook"@en-US ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.qsnFWda3Ccoc6wHAqXkV6wHaFv%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Tablet
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Tablet"@en-US ;
-  skos:definition "Devices categorised by their manufacturer as a Tablet"@en-US, "A mobile computer that is primarily operated by touching the screen"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.KSanjYoC4Sxe4vLIL3PCNwHaDa%26pid%3DApi&f=1> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Digital_Camera
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Digital_Camera"@en-US ;
-  skos:definition "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://datamining.typepad.com/.a/6a00d8341c994053ef0120a5c7977b970c-pi> ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Mobile_Phone
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Mobile_Phone"@en-US ;
-  skos:definition "A portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  skos:narrower dt:Cell_Phone, dt:Smart_Phone ;
-  skos:topConceptOf dt:Device_Types_Scheme .
-
-dt:Cell_Phone
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Cell_Phone"@en-US ;
-  skos:definition "A cellular phone, cell phone, cellphone, handphone, or hand phone, sometimes shortened to simply mobile, cell or just phone, is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area. Examples include Nokia 3310, Siemens A55"@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:altLabel "Cellular_Phone"@en-US ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mobile_phone_evolution.jpg/580px-Mobile_phone_evolution.jpg> ;
-  skos:broader dt:Mobile_Phone .
-
-dt:Smart_Phone
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Smart_Phone"@en-US ;
-  skos:definition "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:editorialNote "Inferred by model and OperatingSystemFacet"@en-US ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.AB33uKTXYwmntGY9jkCE_AFZC1%26pid%3DApi&f=1> ;
-  skos:narrower dt:Android_Phone ;
-  skos:broader dt:Mobile_Phone, dt:Smart_Device .
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.1zm70_xP9KhdPwHdfLspLgHaF0%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Device that physical converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Adaptor"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
 
 dt:Android_Phone
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Android_Phone"@en-US ;
-  skos:definition "A smart phone that applies the Android mobile operating system."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  dct:modified "2022-01-13"^^dct:W3CDTF ;
-  ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3Dj6BLab3JT4glfLqjhFWQHaFj%26pid%3DApi&f=1> ;
-  skos:broader dt:Smart_Phone .
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3Dj6BLab3JT4glfLqjhFWQHaFj%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:broader dt:Smart_Phone ;
+	skos:definition "A smart phone that applies the Android mobile operating system."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Android_Phone"@en-US ;
+	.
 
-#
-# SKOS CONCEPT definitions: makes and models
-#
+dt:Cell_Phone
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mobile_phone_evolution.jpg/580px-Mobile_phone_evolution.jpg> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:altLabel "Cellular_Phone"@en-US ;
+	skos:broader dt:Mobile_Phone ;
+	skos:definition "A cellular phone, cell phone, cellphone, handphone, or hand phone, sometimes shortened to simply mobile, cell or just phone, is a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area. Examples include Nokia 3310, Siemens A55"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Cell_Phone"@en-US ;
+	.
+
+dt:Computer
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.CT_vJV9vF2KIH1SV0ZDKXgHaFm%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Floor/Desktop based computer, including standard workstations"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Computer"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Device_Types_Scheme
+	a skos:ConceptScheme ;
+	dc11:creator
+		"Brandt, Paul (paul@brandt.name)"@en-US ,
+		"Cyber-investigation Analysis Standard Expression (CASE)"@en-US
+		;
+	dc11:description "A best-effort-specified device taxonomy, where a device might, e.g., be inferrable to be a surveillance camera, but might not have a known market model, or might be completely custom-built)"@en-US ;
+	dc11:title "Device types"@en-US ;
+	dct:created "2022-01-13"^^dct:W3CDTF ;
+	skos:hasTopConcept
+		dt:Adaptor ,
+		dt:Computer ,
+		dt:Digital_Camera ,
+		dt:Embedded_Device ,
+		dt:Laptop ,
+		dt:Media ,
+		dt:Mobile_Phone ,
+		dt:Protocol_Converter ,
+		dt:Server ,
+		dt:Smart_Device ,
+		dt:Tablet ,
+		dt:Write_Blocker
+		;
+	.
+
+dt:Digital_Camera
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://datamining.typepad.com/.a/6a00d8341c994053ef0120a5c7977b970c-pi> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Digital_Camera"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Embedded_Device
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.10ZZrIhhEHm6Cu1GgwmwvQHaEK%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Embedded_Device"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
 
 dt:Fairphone-4
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Fairphone-4"@en-US ;
-  skos:definition "Fairphone model 4."@en-US ;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:broader dt:Android_Phone ;
-  rdfs:seeAlso <https://shop.fairphone.com/en/fairphone-4-overview> .
+	a observable:DeviceTypeConcept ;
+	rdfs:seeAlso <https://shop.fairphone.com/en/fairphone-4-overview> ;
+	skos:broader dt:Android_Phone ;
+	skos:definition "Fairphone model 4."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Fairphone-4"@en-US ;
+	.
 
+dt:Laptop
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.qsnFWda3Ccoc6wHAqXkV6wHaFv%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:altLabel "Notebook"@en-US ;
+	skos:definition
+		"A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode."@en-US ,
+		"Devices categorised by their manufacturer as a Laptop"@en-US
+		;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Laptop"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Mobile_Phone
+	a observable:DeviceTypeConcept ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "A portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:narrower
+		dt:Cell_Phone ,
+		dt:Smart_Phone
+		;
+	skos:prefLabel "Mobile_Phone"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Protocol_Converter
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.qfAsoA43CLL0loLmBNcoQgAAAA%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Protocol_Converter"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
 
 dt:SM-G925F
-  a observable:DeviceTypeConcept ;
-  skos:inScheme dt:Device_Types_Scheme ;
-  skos:prefLabel "Samsung SM-G925F"@en-US ;
-  skos:definition "Samsung SM-G925F Galaxy S6 Edge."@en-US;
-#  omr-rs:RegStatus omr-rs:1002 ;
-  skos:broader dt:Android_Phone ;
-  rdfs:seeAlso <https://sfirmware.com/samsung-sm-g925f/> .
+	a observable:DeviceTypeConcept ;
+	rdfs:seeAlso <https://sfirmware.com/samsung-sm-g925f/> ;
+	skos:broader dt:Android_Phone ;
+	skos:definition "Samsung SM-G925F Galaxy S6 Edge."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Samsung SM-G925F"@en-US ;
+	.
 
-#
-# End of File
-#
+dt:Server
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://netcan.com/wp-content/uploads/2014/06/servers1.jpg> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Server Rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Server"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Smart_Device
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.I2j0ufd10uR-8CqUdgdYRQHaE8%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Microprocessor IoT devices expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Smart_Device"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Smart_Phone
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.AB33uKTXYwmntGY9jkCE_AFZC1%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:broader
+		dt:Mobile_Phone ,
+		dt:Smart_Device
+		;
+	skos:definition "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry."@en-US ;
+	skos:editorialNote "Inferred by model and OperatingSystemFacet"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:narrower dt:Android_Phone ;
+	skos:prefLabel "Smart_Phone"@en-US ;
+	.
+
+dt:Storage_Medium
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CsP9VJc0_AP06DruwwMD5AHaFK%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Storage Medium refers to digital storage devices that apply electromagnetic or optical surfaces, or depend solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
+	skos:editorialNote "Possibly referenced by new MediaFacet"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Storage Medium"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Tablet
+	a observable:DeviceTypeConcept ;
+	ns1:thumbnail <https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.KSanjYoC4Sxe4vLIL3PCNwHaDa%26pid%3DApi&f=1> ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition
+		"A mobile computer that is primarily operated by touching the screen"@en-US ,
+		"Devices categorised by their manufacturer as a Tablet"@en-US
+		;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Tablet"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+
+dt:Write_Blocker
+	a observable:DeviceTypeConcept ;
+	dct:modified "2022-01-13"^^dct:W3CDTF ;
+	skos:definition "Tableau, Cellibrite, Talon, et"@en-US ;
+	skos:inScheme dt:Device_Types_Scheme ;
+	skos:prefLabel "Write_Blocker"@en-US ;
+	skos:topConceptOf dt:Device_Types_Scheme ;
+	.
+

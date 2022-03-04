@@ -45,7 +45,10 @@ all: \
 
 check: \
   .venv.done.log
-	# First, build monolithic render of UCO at tracked commit.
+	# First, confirm taxonomy file is normalised.
+	$(MAKE) \
+	 --directory taxonomy/device-types check
+	# Second, build monolithic render of UCO at tracked commit.
 	$(MAKE) \
 	  --directory dependencies/UCO/tests \
 	  uco_monolithic.ttl
