@@ -6,13 +6,13 @@
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/deviceType/> .
+@prefix dt: <https://taxonomy.unifiedcyberontology.org/uco/device-type/> .
 
 #
 # Taxonomy is also declared an ontology for reasons of versioning
 #
 
-<https://taxonomy.unifiedcyberontology.org/uco/deviceType> 
+<https://taxonomy.unifiedcyberontology.org/uco/device-type> 
   a owl:Ontology ;
   owl:versionInfo "0.1.0"@en ;
   rdfs:label "uco-dt"@en ;
