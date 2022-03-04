@@ -18,7 +18,7 @@ import pandas
 import rdflib.plugins.sparql
 
 def apply_prefix(iri: str) -> str:
-    return iri.replace("https://taxonomy.unifiedcyberontology.org/uco/deviceType/", "dt:")
+    return iri.replace("https://taxonomy.unifiedcyberontology.org/uco/device-types/", "dt:")
 
 
 
