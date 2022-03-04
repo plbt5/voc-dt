@@ -47,7 +47,7 @@ In conclusion, any newly added concept adds a node, uniquely identified by URI, 
 Every node that you add will be implemented as part of a larger skos-taxonomy. In the context of this SKOS-taxonomy:
 
 * a *device* will be implemented as a [`skos:Concept`][skos:concept], particularly as an [`observable:DeviceTypeConcept`][uco:devicetypeconcept] (refer to the [Style guide](#style-guide)). 
-* a *category* will be implemented as either [`skos:ConceptScheme`][skos:conceptscheme] or [`skos:Collection`][skos:collection]
+* a *category* will be implemented as either [`observable:DeviceTypeConcept`][uco:devicetypeconcept] or [`skos:Collection`][skos:collection]
 
 The intent of a [`skos:ConceptScheme`][skos:conceptscheme] is to capture a single complete taxonomy, enforcing a hierarchy of terms (a tree). Higher terms denote more abstract categories that address only a single or few shared characteristics, whereas lower terms denote more specific categories that share a lot of characteristics. The most specific categories, i.e., the *leafs*, of a concept scheme can almost describe individuals. <br>
 The intent of a [`skos:Collection`][skos:collection] is to group closely-related concepts that appear in the taxonomy, without enforcing a hierarchy between them. "Collections are useful where a group of concepts shares something in common, and it is convenient to group them under a common label, or where some concepts can be placed in a meaningful order." The "common label" denotes the collection.  
@@ -89,11 +89,7 @@ We apply the following definitions:
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
    build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
+1. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
 
