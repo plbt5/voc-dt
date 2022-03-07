@@ -15,8 +15,8 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:deviceTypeConcept": {
-                        "@id": "uco-dt:SM-G925F"
+                    "uco-observable:deviceType": {
+                        "@id": "uco-dt:BD30761F-8AE3-4EB2-ABAC-428C824FB59E"
                     },
                     "uco-observable:manufacturer": "Samsung",
                     "uco-observable:model": "SM-G925F",

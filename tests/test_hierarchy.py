@@ -77,7 +77,7 @@ WHERE {
     .
 
   ?nDeviceFacet
-    observable:deviceType dt:SM-G925F ;
+    observable:deviceType dt:BD30761F-8AE3-4EB2-ABAC-428C824FB59E ;
     .
 
 }"""
@@ -110,7 +110,7 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broader? dt:Android_Phone ;
+    skos:broader? dt:C87057A1-7BC2-4297-BBD8-938735CDBCB7 ;
     .
 }"""
     for result in graph.query(query):
@@ -142,7 +142,7 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:Android_Phone ;
+    skos:broaderTransitive* dt:C87057A1-7BC2-4297-BBD8-938735CDBCB7 ;
     .
 }"""
     for result in graph.query(query):
@@ -174,7 +174,7 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:Mobile_Phone ;
+    skos:broaderTransitive* dt:9107240F-37E2-4686-A0F0-A3446406512E
     .
 }"""
     for result in graph.query(query):
