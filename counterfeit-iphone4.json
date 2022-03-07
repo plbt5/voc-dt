@@ -18,7 +18,7 @@
                 "@id": "https://doi.org/10.1007/978-3-642-33962-2_9"
             },
             "skos:broader": {
-                "@id": "uco-dt:Smart_Phone"
+                "@id": "uco-dt:119BA935-C954-4B7B-A6E6-4C10BE7A1D27"
             },
             "skos:definition": "A class of counterfeit iPhone 4, with characteristics described in Section 4 of 'Fang J. et al. (2012) Forensic Analysis of Pirated Chinese Shanzhai Mobile Phones. In: Peterson G., Shenoi S. (eds) Advances in Digital Forensics VIII. DigitalForensics 2012. IFIP Advances in Information and Communication Technology, vol 383. Springer, Berlin, Heidelberg.'"
         },

@@ -77,7 +77,11 @@ WHERE {
     .
 
   ?nDeviceFacet
-    observable:deviceType dt:SM-G925F ;
+    observable:deviceType ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Samsung SM-G925F"@en-US ;
     .
 
 }"""
@@ -110,7 +114,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broader? dt:Android_Phone ;
+    skos:broader? ?nDeviceTypeTaxon
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Android_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
@@ -142,7 +150,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:Android_Phone ;
+    skos:broaderTransitive* ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Android_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
@@ -174,7 +186,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:Mobile_Phone ;
+    skos:broaderTransitive* ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Mobile_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
