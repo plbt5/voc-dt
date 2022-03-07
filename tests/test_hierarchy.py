@@ -77,7 +77,11 @@ WHERE {
     .
 
   ?nDeviceFacet
-    observable:deviceType dt:BD30761F-8AE3-4EB2-ABAC-428C824FB59E ;
+    observable:deviceType ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Samsung SM-G925F"@en-US ;
     .
 
 }"""
@@ -110,7 +114,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broader? dt:C87057A1-7BC2-4297-BBD8-938735CDBCB7 ;
+    skos:broader? ?nDeviceTypeTaxon
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Android_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
@@ -142,7 +150,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:C87057A1-7BC2-4297-BBD8-938735CDBCB7 ;
+    skos:broaderTransitive* ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Android_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
@@ -174,7 +186,11 @@ WHERE {
     .
 
   ?nDeviceType
-    skos:broaderTransitive* dt:9107240F-37E2-4686-A0F0-A3446406512E
+    skos:broaderTransitive* ?nDeviceTypeTaxon ;
+    .
+
+  ?nDeviceTypeTaxon
+    skos:prefLabel "Mobile_Phone"@en-US ;
     .
 }"""
     for result in graph.query(query):
